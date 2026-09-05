@@ -1,2 +1,4 @@
 requests
 trafilatura
+anthropic
+python-dotenv
