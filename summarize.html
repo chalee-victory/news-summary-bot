@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>뉴스 한 줄 요약봇 | 요약하기</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<header class="site-header">
+		<nav class="nav container" aria-label="주 메뉴">
+			<a class="brand" href="index.html"><span class="brand-mark">N</span><span>뉴스 한 줄 요약봇</span></a>
+			<div class="nav-links"><a href="index.html">홈</a><a class="active" href="summarize.html">요약하기</a><a href="guide.html">사용법</a><a href="about.html">소개</a></div>
+		</nav>
+	</header>
+
+	<main class="page-main container">
+		<section class="page-heading"><p class="eyebrow">SUMMARIZE ARTICLE</p><h1>뉴스를 요약해 보세요</h1><p>기사 URL을 입력하면 핵심 내용을 정리할 수 있습니다.</p></section>
+		<form class="url-form" id="summary-form">
+			<label for="article-url">뉴스 기사 URL</label>
+			<div class="input-row"><input id="article-url" type="url" placeholder="https://example.com/news/article" required><button class="button button-primary" type="submit">요약하기 <span aria-hidden="true">→</span></button></div>
+			<p class="form-hint">현재는 화면 구성만 제공되며, AI 요약 기능은 준비 중입니다.</p>
+		</form>
+
+		<section class="result-panel" id="result-panel" aria-live="polite">
+			<div class="result-header"><div><p class="eyebrow">SUMMARY RESULT</p><h2>요약 결과</h2></div><span class="status-badge">대기 중</span></div>
+			<div class="result-content">
+				<div class="result-block"><h3>3줄 요약</h3><ol class="summary-list"><li>기사의 핵심 내용이 이곳에 표시됩니다.</li><li>주요 사건과 흐름을 간결하게 정리합니다.</li><li>AI 연동 후 실제 요약 결과가 제공됩니다.</li></ol></div>
+				<div class="result-block"><h3>핵심 키워드</h3><div class="keyword-list"><span>키워드 01</span><span>키워드 02</span><span>키워드 03</span></div></div>
+				<button class="original-link" type="button" disabled>원문 보기 <span aria-hidden="true">↗</span></button>
+			</div>
+		</section>
+	</main>
+	<footer class="site-footer"><div class="container">뉴스 한 줄 요약봇 <span>·</span> AI 웹 개발 과제</div></footer>
+	<script>
+		document.getElementById('summary-form').addEventListener('submit', function (event) {
+			event.preventDefault();
+			document.querySelector('.status-badge').textContent = '요약 준비 완료';
+			document.getElementById('result-panel').classList.add('is-ready');
+		});
+	</script>
+</body>
+</html>
