@@ -1,6 +1,12 @@
 [project]
 name = "news-summary-bot"
 version = "0.1.0"
+dependencies = [
+	"anthropic",
+	"requests",
+	"trafilatura",
+	"python-dotenv",
+]
 
 [tool.vercel]
 entrypoint = "api.summarize:handler"
