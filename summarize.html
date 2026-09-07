@@ -20,6 +20,7 @@
 			<label for="article-url">뉴스 기사 URL</label>
 			<div class="input-row"><input id="article-url" type="url" placeholder="https://example.com/news/article" required><button class="button button-primary" type="submit">요약하기 <span aria-hidden="true">→</span></button></div>
 			<p class="form-hint">현재는 화면 구성만 제공되며, AI 요약 기능은 준비 중입니다.</p>
+			<p class="form-error" id="form-error" hidden></p>
 		</form>
 
 		<section class="result-panel" id="result-panel" aria-live="polite">
@@ -32,12 +33,6 @@
 		</section>
 	</main>
 	<footer class="site-footer"><div class="container">뉴스 한 줄 요약봇 <span>·</span> AI 웹 개발 과제</div></footer>
-	<script>
-		document.getElementById('summary-form').addEventListener('submit', function (event) {
-			event.preventDefault();
-			document.querySelector('.status-badge').textContent = '요약 준비 완료';
-			document.getElementById('result-panel').classList.add('is-ready');
-		});
-	</script>
+	<script src="js/main.js"></script>
 </body>
 </html>
