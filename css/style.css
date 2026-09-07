@@ -42,3 +42,43 @@ h1 strong, .about-copy strong { color: var(--blue); font-weight: 800; }
 .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }.step-card { position: relative; min-height: 260px; padding: 28px; background: var(--white); border: 1px solid var(--line); border-radius: 8px; }.step-number { color: var(--blue); font-size: 12px; font-weight: 900; letter-spacing: .12em; }.step-icon { display: grid; width: 48px; height: 48px; margin: 35px 0 22px; place-items: center; color: var(--white); background: var(--blue); border-radius: 50%; font-size: 21px; }.step-card h2 { margin-bottom: 8px; font-size: 18px; letter-spacing: -.04em; }.step-card p { margin: 0; color: var(--muted); font-size: 13px; }.notice { display: flex; gap: 17px; margin-top: 28px; padding: 21px 24px; border: 1px solid #cfe0f6; background: var(--pale); }.notice-icon { display: grid; flex: 0 0 22px; height: 22px; place-items: center; color: var(--white); background: var(--blue); border-radius: 50%; font-size: 13px; font-weight: 800; }.notice h2 { margin: 0 0 3px; font-size: 14px; }.notice p { margin: 0; color: var(--muted); font-size: 13px; }
 .about-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 100px; align-items: center; }.about-stamp { color: var(--blue); font-size: 110px; font-weight: 900; letter-spacing: -.1em; line-height: 1; }.about-stamp span { color: #bdd3f2; font-size: 45px; }.about-copy { max-width: 590px; }.about-copy h1 { margin-bottom: 25px; font-size: 45px; line-height: 1.2; letter-spacing: -.07em; }.about-copy > p:not(.eyebrow) { color: var(--muted); font-size: 15px; }.text-link { display: inline-flex; gap: 13px; margin-top: 16px; color: var(--blue); font-size: 14px; font-weight: 900; }.quote-band { margin-top: 90px; padding: 40px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }.quote-band p { margin: 0; color: #7890af; font-size: 20px; line-height: 1.5; }.quote-band strong { color: var(--ink); }
 @media (max-width: 768px) { .container { width: min(100% - 36px, 560px); }.nav { min-height: 68px; align-items: flex-start; flex-direction: column; gap: 0; padding-top: 15px; }.nav-links { width: 100%; justify-content: space-between; gap: 10px; font-size: 12px; }.nav-links a { padding: 9px 0 11px; }.hero { min-height: auto; display: flex; flex-direction: column; align-items: stretch; gap: 40px; padding-top: 70px; padding-bottom: 72px; }.hero h1 { font-size: 43px; }.hero-visual { min-height: 250px; }.feature-grid { grid-template-columns: 1fr; gap: 25px; }.page-main { padding: 58px 0 70px; }.page-heading h1 { font-size: 34px; }.input-row { flex-direction: column; }.input-row input { min-height: 48px; }.result-panel { padding: 22px 18px; }.result-content { grid-template-columns: 1fr; gap: 20px; }.steps-grid { grid-template-columns: 1fr; }.step-card { min-height: auto; padding: 23px; }.step-icon { margin: 22px 0 16px; }.about-layout { grid-template-columns: 1fr; gap: 28px; }.about-stamp { font-size: 74px; }.about-copy h1 { font-size: 36px; }.quote-band { margin-top: 60px; } }
+
+/* ===== 다크 모드 (보너스 과제: UX 고도화) ===== */
+[data-theme="dark"] {
+  --ink: #eef2f8;
+  --muted: #9aa8bd;
+  --blue: #5b9bff;
+  --blue-dark: #86b6ff;
+  --pale: #1b2a44;
+  --line: #2a3850;
+  --white: #16202f;
+}
+[data-theme="dark"] body { background: #0b1220; }
+[data-theme="dark"] .feature-strip { background: #060b14; }
+[data-theme="dark"] .button-primary { box-shadow: 0 9px 18px rgba(91, 155, 255, .18); }
+[data-theme="dark"] .news-window { box-shadow: 0 22px 45px rgba(0, 0, 0, .35); border-color: #223353; }
+[data-theme="dark"] .summary-note { background: #182741; }
+[data-theme="dark"] .about-stamp span { color: #3a4f78; }
+
+/* 다크모드 토글 버튼 */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  margin-left: 8px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color .15s ease, transform .15s ease;
+}
+.theme-toggle:hover { border-color: var(--blue); transform: translateY(-1px); }
+
+@media (max-width: 768px) {
+  .theme-toggle { width: 34px; height: 34px; font-size: 14px; }
+}
