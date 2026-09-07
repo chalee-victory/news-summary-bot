@@ -29,6 +29,7 @@
 | 백엔드 | Vercel Serverless Functions (Python) |
 | 크롤링 | `requests` (HTML 요청) + `trafilatura` (본문 추출) |
 | AI API | Anthropic Claude API (`claude-haiku-4-5`) |
+| 환경 변수 관리 | `python-dotenv` (로컬 개발 시 `.env` 파일 로드) |
 | 배포 | Vercel + GitHub 연동 |
 
 ## 프로젝트 구조
